@@ -52,7 +52,6 @@ namespace MM_API
                 options.UseNpgsql(builder.Configuration.GetConnectionString("Db")));
             System.Diagnostics.Debug.WriteLine($"Connection String: {builder.Configuration.GetConnectionString("Db")}");
 
-
             #region Authentication & Authorization
             builder.Services.AddAuthorization(options =>
             {

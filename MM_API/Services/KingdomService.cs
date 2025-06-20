@@ -170,10 +170,10 @@ namespace MM_API.Services
                 //int[] totalNumBuildings = kingdomState.NumNodeTypes;
                 for (int i = 0; i < nodeIndexes.Length; i++)
                 {
-                    //game rule check
-                    if (nodeTypes[i] == 6)
-                        if (!KingdomState.ValidateBlockadeRoadRule(kingdomMap[nodeIndexes[i]].NodeType, nodeTypes[i]))
-                            return new ErrorResponse("Malformed payload detected");
+                    //game rule check - NOT UTILISING GAME RULES OTHER THAN SUFFICIENT COIN ANYMORE
+                    //if (nodeTypes[i] == 6)
+                    //    if (!KingdomState.ValidateBlockadeRoadRule(kingdomMap[nodeIndexes[i]].NodeType, nodeTypes[i]))
+                    //        return new ErrorResponse("Malformed payload detected");
 
                     //if (kingdomMap[nodeIndexes[i]].NodeType != (int)NodeTypeEnum.Road && nodeTypes[i] == (int)NodeTypeEnum.Blockade)
                     //    return new ErrorResponse("Malformed payload detected");
@@ -269,9 +269,9 @@ namespace MM_API.Services
                 treasuryState.UpdateCoinGainRate(kingdomState.NumNodeTypes);
                 treasuryState.UpdateCoinMultiplier(kingdomState.NumNodeTypes);
 
-                //expand on the below line of code's error message
-                if (!KingdomState.ValidateBuildActionByNumOfBuildings(kingdomState.NumNodeTypes))
-                    return new ErrorResponse("Malformed payload detected");
+                //expand on the below line of code's error message - NOT UTILISING GAME RULES OTHER THAN SUFFICIENT COIN ANYMORE
+                //if (!KingdomState.ValidateBuildActionByNumOfBuildings(kingdomState.NumNodeTypes))
+                //    return new ErrorResponse("Malformed payload detected");
 
 
                 ///
